@@ -1,0 +1,21 @@
+0. Otvori cmd kao admin
+1. Kreiraj fajlove (makni package i međusobne importe, ali loadaj hadoopove .jar fajlove)
+2. Odi u bin -> hdfs namenode -format
+3. Obrisi data ak baci error
+4. Odi u sbin -> start-dfs.cmd
+5. Odi u sbin -> start-yarn.cmd
+6. Provjeri za oba da se nisu prekinula (4 prozora)
+7. Odi u D:\Hadoop\bin\user\hana\pus\src\zad2 -> hadoop classpath
+8. Kopiraj output prethodni -> javac -classpath to_kopirano *.java -> stvaraju se .class fajlovi
+9. jar -cvf VideoCount.jar . -> stvara VideoCount.jar fajl
+10. Napravi log.txt u istom folderu (D:\Hadoop\bin\user\hana\pus\src\zad2)
+11. Izbrisi log1 (ulaz) i out1 (izlaz) ako vec postoje:
+	hadoop fs -rm -r /log1 i hadoop fs -rm -r /out1
+	Za ove kasnije i hadoop fs -rm -r temp_out
+	Moze i sve skupa u istu naredbu 
+	hadoop fs -rm -r /log1 && hadoop fs -rm -r /out1 && hadoop fs -rm -r temp_out
+12. hdfs dfs -put log.txt /log1
+13. hadoop jar VideoCount.jar VideoCount /log1 /out1 -> pokrece sve
+14. hadoop fs -ls /out1 -> izlaz
+15. hdfs dfs -cat /out1/part-00000 -> rezultat
+16. hdfs dfs -get /out1/part-00000 -> sprema prethodni output u fajl
