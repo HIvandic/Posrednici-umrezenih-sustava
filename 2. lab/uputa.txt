@@ -1,0 +1,3 @@
+Pokrenuti s anacondom
+Instalirati javu za anacondu ako je jos nema -> conda install -c cyclus java-jdk
+Pokretanje -anaconde s D: -> jupyter notebook --notebook-dir=D:
